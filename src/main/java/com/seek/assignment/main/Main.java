@@ -2,6 +2,7 @@ package com.seek.assignment.main;
 
 import com.seek.assignment.controller.CounterOutputController;
 import com.seek.assignment.io.CounterIO;
+import com.seek.assignment.io.impl.CounterIOImpl;
 import com.seek.assignment.service.CounterService;
 import com.seek.assignment.service.impl.CounterServiceImpl;
 
@@ -10,7 +11,7 @@ public class Main {
   public static void main(String[] args) {
     final String fileName =
         "/Users/sujaybhowmick/development/rnd/counter-service/src/test/resources/counter-file.txt";
-    CounterIO counterIO = CounterIO.newInstance(fileName);
+    CounterIO counterIO = new CounterIOImpl(fileName);
     CounterService counterService = new CounterServiceImpl(counterIO);
     CounterOutputController outputController = new CounterOutputController(counterService);
     System.out.println(outputController.getTotalCars());
