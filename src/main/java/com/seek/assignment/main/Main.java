@@ -9,8 +9,11 @@ import com.seek.assignment.service.impl.CounterServiceImpl;
 public class Main {
 
   public static void main(String[] args) {
-    final String fileName =
-        "/Users/sujaybhowmick/development/rnd/counter-service/src/test/resources/counter-file.txt";
+    if(args.length < 1) {
+      System.out.println("Usage: Main <counter.out>");
+      System.exit(1);
+    }
+    final String fileName = args[0];
     CounterIO counterIO = new CounterIOImpl(fileName);
     CounterService counterService = new CounterServiceImpl(counterIO);
     CounterOutputController outputController = new CounterOutputController(counterService);
