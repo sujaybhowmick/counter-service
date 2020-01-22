@@ -10,7 +10,7 @@ public class Main {
 
   public static void main(String[] args) {
     if(args.length < 1) {
-      System.out.println("Usage: Main <counter.out>");
+      System.out.println("Usage: Main <file path of the counter file>");
       System.exit(1);
     }
     final String fileName = args[0];
