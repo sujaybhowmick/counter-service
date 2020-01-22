@@ -18,3 +18,9 @@ $./gradlew test
 $ java -jar counter-service-0.1.jar <path-to-counter-file>
 ```
 
+or 
+
+```bash
+$ ./gradlew run --args <path-to-counter-file>
+```
+
